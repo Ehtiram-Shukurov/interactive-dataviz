@@ -15,7 +15,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: process.argv.includes('dev') ? '' : '/TASK-0'
+			base: process.argv.includes('dev') ? '' : '/task-0'
 		}
 	}
 };
