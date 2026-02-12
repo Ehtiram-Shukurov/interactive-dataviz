@@ -1,5 +1,5 @@
 <script>
-    let maxClick = 2;
+    let maxClick = 5;
     let cnt = maxClick; // tip: https://svelte.dev/docs/svelte/$state
     
     function onClick() {
@@ -21,7 +21,7 @@
     bind:value={maxClick}
     on:change={() => (cnt = maxClick)}
   >
-    {#each [2, 4, 6] as optionNum}
+    {#each [2, 4, 5, 6] as optionNum}
       <option value={optionNum}>
         {optionNum}
       </option>
