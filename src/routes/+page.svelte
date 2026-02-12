@@ -7,11 +7,12 @@
     }
 </script>
   
-<h1>[Your Name]'s VIS Site</h1>
+<h1>Ezra's Site</h1>
 
 <img
   width="200px"
-  src="url to your favorite image"
+  src="/image.jpg" 
+  alt="My Image"
 />
 
 <div>
