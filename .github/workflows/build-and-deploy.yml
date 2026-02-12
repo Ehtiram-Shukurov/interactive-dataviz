@@ -6,6 +6,16 @@ on:
     # Ensure the branch name matches your repository's default branch, 
     # as it might still be named 'master' in some cases.
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+
 jobs:
   build_site:
     runs-on: ubuntu-latest
