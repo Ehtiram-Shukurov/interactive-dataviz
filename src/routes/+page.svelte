@@ -11,7 +11,7 @@
 
 <img
   width="200px"
-  src="/image.jpg" 
+  src="image.jpg" 
   alt="My Image"
 />
 
