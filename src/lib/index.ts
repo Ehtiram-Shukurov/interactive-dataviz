@@ -1,1 +1,8 @@
-// place files you want to import through the `$lib` alias in this folder.
+import Bar from './Bar.svelte'
+export {Bar}
+
+import BumpChart from './BumpChart.svelte'; 
+export { BumpChart };
+
+import HeatMap from './HeatMap.svelte'; 
+export { HeatMap };
