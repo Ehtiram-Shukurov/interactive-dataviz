@@ -1,8 +1,7 @@
 import Bar from './Bar.svelte'
-export {Bar}
-
+import Scatter from './Scatter.svelte'
+import Line from './Line.svelte'
 import BumpChart from './BumpChart.svelte'; 
-export { BumpChart };
-
 import HeatMap from './HeatMap.svelte'; 
-export { HeatMap };
+
+export {Bar,Scatter, Line, BumpChart, HeatMap}
