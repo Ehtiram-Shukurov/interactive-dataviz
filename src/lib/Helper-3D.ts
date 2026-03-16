@@ -74,9 +74,6 @@ function loadModels(models: T3DModel[], scene: THREE.Scene, mixer: THREE.Animati
     mixer = new THREE.AnimationMixer(scene);
     models.forEach((model) => {
         gltfLoader.load(model.path, (gltf) => {
-            console.log("Model loaded:", model.path);
-            console.log("Children:", gltf.scene.children);
-            console.log("Animations:", gltf.animations);
             const mesh = gltf.scene.children[0];
             const clip = gltf.animations[0];
             addMorph(
