@@ -3,5 +3,6 @@ import Scatter from './Scatter.svelte'
 import Line from './Line.svelte'
 import BumpChart from './BumpChart.svelte'; 
 import HeatMap from './HeatMap.svelte'; 
+import Scroll from './Scroll.svelte'
 
-export {Bar,Scatter, Line, BumpChart, HeatMap}
+export {Bar,Scatter, Line, BumpChart, HeatMap, Scroll}
