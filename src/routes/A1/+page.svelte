@@ -6,15 +6,12 @@
   import BumpChart from "$lib/BumpChart.svelte";
   import HeatMap from "$lib/HeatMap.svelte";
 
-  // Reactive variable for storing the data
   let movies: TMovie[] = [];
 
-  // Function to load the CSV
   async function loadCsv() {
     try {
       const csvUrl = "./summer_movies.csv";
       movies = await d3.csv(csvUrl, (row): TMovie => {
-        // TIP: in row, all values are strings, so we need to use a row conversion function here to format them
         return {
           tconst: row.tconst ?? "",
           title_type: row.title_type ?? "",
@@ -26,21 +23,105 @@
           simple_title: row.simple_title ?? "",
           average_rating: Number(row.average_rating),
           num_votes: Number(row.num_votes),
-  };
+        };
       });
-
-      console.log("Loaded CSV Data:", movies);
     } catch (error) {
       console.error("Error loading CSV:", error);
     }
   }
-  // Call the loader when the component mounts
+
   onMount(loadCsv);
 </script>
 
-<h1>Summer Movies</h1>
+<div class="page">
 
-<p>Here are {movies.length == 0 ? "..." : movies.length + " "} movies</p>
-<Bar {movies} />
-<BumpChart {movies} width={1200} height={520} />
-<HeatMap {movies} />
+  <header class="page-header">
+    <span class="badge">A1</span>
+    <h1>Summer Movies Dashboard</h1>
+    <p class="subtitle">
+      Three charts exploring 899 summer movies from 1945 to 2023 — how genres
+      are distributed, how their rankings shifted year over year, and which
+      genres most often appear together in the same film.
+    </p>
+    <p class="movie-count">
+      {movies.length === 0 ? "Loading..." : `${movies.length} movies loaded`}
+    </p>
+  </header>
+
+  <div class="charts">
+    <section class="chart-section">
+      <Bar {movies} />
+    </section>
+
+    <section class="chart-section">
+      <BumpChart {movies} width={1200} height={520} />
+    </section>
+
+    <section class="chart-section">
+      <HeatMap {movies} />
+    </section>
+  </div>
+
+</div>
+
+<style>
+  .page {
+    font-family: system-ui, -apple-system, sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  /* ── Page header ── */
+  .page-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dce8e4;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #2ab5a0;
+    margin-bottom: 0.6rem;
+  }
+
+  h1 {
+    font-family: Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: normal;
+    color: #111d2b;
+    margin: 0 0 0.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    color: #5a7080;
+    line-height: 1.65;
+    margin: 0 0 0.75rem;
+    max-width: 640px;
+  }
+
+  .movie-count {
+    font-size: 0.78rem;
+    color: #2ab5a0;
+    margin: 0;
+  }
+
+  /* ── Charts ── */
+  .charts {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .chart-section {
+    background: #fff;
+    border: 1.5px solid #dce8e4;
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+</style>
