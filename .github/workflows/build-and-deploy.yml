@@ -34,7 +34,7 @@ jobs:
 
       - name: build
         env:
-           BASE_PATH: '/task-0'
+            BASE_PATH: '/interactive-dataviz'
         run: npm run build
 
       - name: Upload Artifacts
