@@ -2,7 +2,7 @@
 
 A collection of five data visualization assignments built for **CSCI 5609: Data Visualization** at the University of Minnesota. Each assignment explores a different technique, all centered on the same dataset: 899 summer movies released between 1945 and 2023.
 
-**[Live Demo](https://your-deployment-url.com)** · **[GitHub](https://github.com/your-username/your-repo)**
+**[Live Demo](https://ehtiram-shukurov.github.io/interactive-dataviz/)**
 
 ---
 
