@@ -50,7 +50,7 @@
     <section class="cards-section">
         <div class="cards-grid">
 
-            <a href="/A0" class="card">
+            <a href="A0" class="card">
                 <span class="card-bg-num">A0</span>
                 <div class="card-content">
                     <p class="card-label">A0</p>
@@ -63,7 +63,7 @@
                 </div>
             </a>
 
-            <a href="/A1" class="card card-wide">
+            <a href="A1" class="card card-wide">
                 <span class="card-bg-num">A1</span>
                 <div class="card-content">
                     <p class="card-label">A1</p>
@@ -77,7 +77,7 @@
                 </div>
             </a>
 
-            <a href="/A2" class="card">
+            <a href="A2" class="card">
                 <span class="card-bg-num">A2</span>
                 <div class="card-content">
                     <p class="card-label">A2</p>
@@ -91,7 +91,7 @@
                 </div>
             </a>
 
-            <a href="/A3" class="card">
+            <a href="A3" class="card">
                 <span class="card-bg-num">A3</span>
                 <div class="card-content">
                     <p class="card-label">A3</p>
@@ -105,7 +105,7 @@
                 </div>
             </a>
 
-            <a href="/A4" class="card">
+            <a href="A4" class="card">
                 <span class="card-bg-num">A4</span>
                 <div class="card-content">
                     <p class="card-label">A4</p>
