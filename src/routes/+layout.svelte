@@ -9,7 +9,7 @@
 </svelte:head>
 
 <header class="nav">
-    <a href="interactive-dataviz" class="monogram">Homepage</a>
+    <a href="" class="monogram">Homepage</a>
     <nav>
         {#each ['A0', 'A1', 'A2', 'A3', 'A4'] as id}
             <a href="{id}">{id}</a>
