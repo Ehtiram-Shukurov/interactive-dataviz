@@ -1,42 +1,92 @@
-# sv
+# Summer Movies — A Data Visualization Journey
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A collection of five data visualization assignments built for **CSCI 5609: Data Visualization** at the University of Minnesota. Each assignment explores a different technique, all centered on the same dataset: 899 summer movies released between 1945 and 2023.
 
-## Creating a project
+**[Live Demo](https://your-deployment-url.com)** · **[GitHub](https://github.com/your-username/your-repo)**
 
-If you're seeing this, you've probably already done this step. Congrats!
+---
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Assignments
 
-To recreate this project with the same configuration:
+### A0 — Getting Started
+A first look at Svelte 5's runes syntax. A small interactive click counter with a dropdown to set the limit — the goal was to get comfortable with reactive state and event handling before the real work began.
 
-```sh
-# recreate this project
-npx sv create --template minimal --types ts --install npm task-0
-```
+**Tools:** Svelte 5, TypeScript
 
-## Developing
+---
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### A1 — Summer Movies Dashboard
+Three charts built with D3 exploring the full dataset:
 
-```sh
+- **Bar chart** — genre distribution across all movies, animated as you move through years
+- **Bump chart** — how genre rankings shifted year over year from 1945 to 2023
+- **Heatmap** — a co-occurrence matrix showing which genres most often appear together in the same film
+
+**Tools:** D3.js, SVG, SvelteKit
+
+---
+
+### A2 — Interactive Scatter & Timeline
+A scatter plot where you control the axes — switch between year, rating, runtime, and vote count on the fly. A brushable line chart below filters the scatter to a specific year range in real time, so you can zoom into any decade.
+
+**Tools:** D3.js, Svelte 5 Runes, Brush interaction
+
+---
+
+### A3 — 3D Beach Visualization
+Every summer movie represented as its own 3D shape rising from the sand, grouped into 5-year columns:
+
+- 🟠 **Comedy** → Icosahedron
+- 🔴 **Romance** → Torus Knot
+- 🟢 **Drama** → Octahedron
+
+The scene runs in a full beach environment with palm trees, an animated seagull, and a clapperboard. Hit Play to bring it to life.
+
+**Tools:** Three.js, WebGL, D3.js, GLTFLoader
+
+---
+
+### A4 — Scrollytelling
+A scroll-driven narrative visualization in two parts:
+
+1. **2D scrolly** — a bar chart comparing each year's genre counts to 3 years prior as you scroll through every movie in the dataset
+2. **3D scrolly** — the same beach scene from A3, but now scroll-controlled. Each era of summer cinema rises from the sand as you read through the story, with camera movement and decade-by-decade reveals tied directly to scroll position
+
+**Tools:** Three.js, D3.js, Svelte 5 Runes, Scrollytelling
+
+---
+
+## Dataset
+
+The dataset contains 899 summer movies from IMDb, spanning 1945 to 2023. Each entry includes title, year, genres, runtime, average rating, and vote count. It was the consistent thread across all five assignments — the same data, seen through five different lenses.
+
+---
+
+## Tech Stack
+
+| Tool | Used for |
+|---|---|
+| SvelteKit | App framework and routing |
+| Svelte 5 Runes | Reactive state (`$state`, `$derived`, `$effect`) |
+| D3.js | Data processing and SVG chart rendering |
+| Three.js | 3D scenes and WebGL rendering |
+| TypeScript | Type safety throughout |
+
+---
+
+## Running Locally
+
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Then open [http://localhost:5173](http://localhost:5173).
 
-To create a production version of your app:
+---
 
-```sh
-npm run build
-```
+## Author
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+**Ehtiram (Ezra) Shukurov**  
+CSCI 5609 — Data Visualization  
+University of Minnesota
